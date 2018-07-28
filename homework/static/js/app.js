@@ -46,13 +46,16 @@ submit.on("click", function () {
     // Get the value property of the input element
     var inputValue = inputElement.property("value");
     
-    // var value = d3.event.target.value;
+    // var value = d3.event.target.value;`
     console.log("made it here 2", inputValue);
 
 
     // Filtering based on the date
     var filteredData = tableData.filter(row => row.datetime === inputValue);
+
+    // If they enter without putting anything in the search button, rebuild the table;
     // If they input a date not found in the table, let them know; otherwise build the table from filterdata.
+    
     if (!inputValue){
         buildTable(tableData);
     }
